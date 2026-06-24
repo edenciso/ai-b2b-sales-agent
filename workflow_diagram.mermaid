@@ -1,0 +1,46 @@
+graph TB
+    Start([New Lead]) --> Research[Stage 1: Lead Research Agent]
+    
+    Research --> WebSearch[Web Search Tool<br/>Company Info, News,<br/>Tech Stack, Pain Points]
+    WebSearch --> ResearchData[(Research Data)]
+    
+    ResearchData --> Qualify[Stage 2: Qualification Agent]
+    Qualify --> BANT{BANT Analysis<br/>Budget: 25pts<br/>Authority: 25pts<br/>Need: 25pts<br/>Timeline: 25pts}
+    
+    BANT --> Score{Total Score}
+    Score -->|< 40| Unqualified[Mark as Unqualified]
+    Score -->|40-59| Nurture[Move to Nurture Campaign]
+    Score -->|≥ 60| Qualified[Qualified Lead]
+    
+    Qualified --> Outreach[Stage 3: Outreach Agent]
+    Outreach --> EmailGen[Generate Personalized<br/>Email + LinkedIn Msg]
+    
+    EmailGen --> EmailTools{Email MCP Server}
+    EmailTools --> SendEmail[Send Immediate Email]
+    EmailTools --> ScheduleEmail[Schedule Follow-up<br/>+3 Days]
+    
+    SendEmail --> CRMUpdate[Stage 4: CRM Update]
+    ScheduleEmail --> CRMUpdate
+    Nurture --> CRMUpdate
+    Unqualified --> CRMUpdate
+    
+    CRMUpdate --> CRMTools{CRM MCP Server}
+    CRMTools --> CreateLead[Create/Update Lead Record]
+    CRMTools --> LogActivity[Log All Activities]
+    CRMTools --> SetReminder[Set Next Action]
+    
+    CreateLead --> Complete([Workflow Complete])
+    LogActivity --> Complete
+    SetReminder --> Complete
+    
+    Complete --> Analytics[Analytics Dashboard]
+    
+    style Start fill:#90EE90
+    style Complete fill:#90EE90
+    style Qualified fill:#FFD700
+    style Unqualified fill:#FFB6C1
+    style Research fill:#87CEEB
+    style Qualify fill:#87CEEB
+    style Outreach fill:#87CEEB
+    style CRMUpdate fill:#87CEEB
+    style Analytics fill:#DDA0DD

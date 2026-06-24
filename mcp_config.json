@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "crm-server": {
+      "command": "python",
+      "args": ["mcp_crm_server.py"],
+      "env": {
+        "CRM_API_KEY": "${CRM_API_KEY}",
+        "CRM_INSTANCE_URL": "https://your-crm.salesforce.com"
+      }
+    },
+    "email-server": {
+      "command": "python",
+      "args": ["mcp_email_server.py"],
+      "env": {
+        "SMTP_HOST": "smtp.gmail.com",
+        "SMTP_PORT": "587",
+        "SMTP_USER": "${EMAIL_USER}",
+        "SMTP_PASSWORD": "${EMAIL_PASSWORD}"
+      }
+    },
+    "data-enrichment": {
+      "command": "python",
+      "args": ["mcp_data_enrichment.py"],
+      "env": {
+        "CLEARBIT_API_KEY": "${CLEARBIT_API_KEY}",
+        "ZOOMINFO_API_KEY": "${ZOOMINFO_API_KEY}"
+      }
+    }
+  }
+}

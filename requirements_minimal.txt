@@ -1,0 +1,14 @@
+# Minimal requirements for quick start demo
+# Use this if you just want to run the quick start example
+
+# Core Anthropic SDK (required)
+anthropic>=0.40.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Async support (comes with Python 3.11+ but explicit for clarity)
+aiohttp>=3.9.0
+
+# Optional but recommended for better output formatting
+rich>=13.7.0
