@@ -301,3 +301,4 @@ If you find this useful, please star the repository!
 ---
 
 **Built with Claude Sonnet 4.5 • Powered by Anthropic**
+** Developed by ValueLayer.ai - All rights reserved 2026
