@@ -300,4 +300,4 @@ If you find this useful, please star the repository!
 
 ---
 
-** Developed by Ed Enciso at ValueLayer.ai - All rights reserved 2026 **
+**Developed by Ed Enciso at ValueLayer.ai - All rights reserved 2026**
